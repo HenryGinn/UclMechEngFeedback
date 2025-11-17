@@ -1,0 +1,189 @@
+\section{Resources}
+\label{sec:Resources}
+% Lecture slides and lecture notes
+% Typesetting
+% Figure quality
+% Specification uncertainty
+% Units and significant figures
+
+The resources at UCL provided to students are severely lacking and significant work needs to be done to remedy this. I have split this section into four areas: the belief that lecture slides are a substitute for lecture notes, the shocking quality of the figures and typesetting in the lecture slides, the poor practices of the lecturers and their surprisingly bad understanding of basic concepts, and the specification.
+
+\subsection{Lecture Slides and Lecture Notes}
+
+Almost all of the content in the UCL engineering department is delivered only via lecture slides, and this is problematic. The lecture slides serve two purposes: to be used during lectures and for students' independent revision. One document cannot be well suited to both purposes simultaneously, it leads to slides that are too energy dense to be used in a presentation, and not detailed enough when used as a standalone document. Below I give details of the problem before providing a solution.
+
+Presentation slides are meant to serve as a visual aid, but the information should be coming almost entirely from the person giving the presentation. If a slide has lots of writing on it, the audience is split between reading the slide and listening to the presenter. Most of the slides in the presentation should have a single large figure and nothing else, all comments about the figure should come from the presenter. Any information that cannot be linked to a figure should be summed up in bullet points, and I personally follow the rule of never going above 20 words on a slide. If the slides make sense without the presenter, then there is probably too much information on the slides. I also believe that mathematical derivations should be written out live on a whiteboard or blackboard as the speed of writing matches the speed of processing each step.
+
+The lecture slides are also insufficient as a resource for independent revision. They are often hard to follow due to their brevity, for example not defining their symbols or not explaining a diagram in sufficient depth. The details that would typically be given in a lecture are usually neglected, and the flow is awkward due to connections and explanations not being included. I would like to make it clear that this is not a request for more detailed lecture slides, and any attempt to fix these problems in the slides would likely make them worse.
+
+As an example of the extra level of detail I would like to see, consider the section from a textbook on thermodynamics featured in figure~\ref{fig:ReheatingWhalley} about the benefits of adding a reheating section to the Rankine cycle. Here they have included a figure to help demonstrate their point and they give the relative importance of their conclusions. They then go on to compare this with other arrangements to further elucidate their point. This is only a short addition, but it finishes up the point very nicely and I find this lacking in the lecturer slides.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/ReheatingWhalley.jpg}
+    \caption{A good example of how to discuss conclusions. Taken from \cite{whalley1992basic}.}
+    \label{fig:ReheatingWhalley}
+\end{figure}
+
+The section on gear sizing in MECH0053 is an example of a wasted opportunity to add more detail. The method of gear sizing used in the module uses data about a pair of gears to determine their radius and width to ensure they are strong enough. Figure~\ref{fig:GearSizing} shows a configuration of gears where a choice needs to be made over which pair is chosen to size the shared gear. When discussing the analysis of this situation the existence of the choice is not even acknowledged, and the general philosophy with this part of the module is to guess. This is not good enough in my opinion, especially as there is an easy way to determine in advance which pair of gears should be used to size the shared gear. I will skip the mathematical details of the method, but the takeaway is that they could have added a few extra slides to derive this method and it would have given a more complete understanding of the topic.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{Figures/GearSizing.pdf}
+    \caption{Two gears being driven by a shared gear}
+    \label{fig:GearSizing}
+\end{figure}
+
+The solution is to simply have two documents for the two different purposes. In my undergraduate studies, every lecture series had an accompanying set of notes intended for the students\footnote{These were not notes used to help the lecturer give the lectures, most lecturers had their own handwritten notes for this purpose that were completely separate.}. The lecture notes had the style of a streamlined book, and each 16 hour lecture series corresponded roughly to 70 A4 pages of notes, and covered about 90\% of a typical 230 page undergraduate textbook. This space allowed the lecturer to go into sufficient detail, and allows for greater flow than lecture slides.
+
+The structure of the resources also has issues, although this is more of a minor issue. The content should be introduced by first motivating it with the problem it is attempting to solve, then summing up the route through the topic that will be taken. The content should start simple and be built upon, for example by removing assumptions or expanding the theory to cover a broader area. I like to think of technical writing as a journey through the material rather than an information dump, and I think the lecturers would benefit significantly from focusing on the overarching structure of their content delivery.
+
+There was one module where the lecturer somehow found something even worse than slides as a method of communicating the content: they gave us a list of papers to read. The only responsibility of a paper is to include the content, there is no expectation of pedagogical practices and it is up to the reader to do all that is necessary to understand it. This often makes them dense and hard to read and, in my opinion, the worst medium through which to learn something. This is especially true for those who haven't been immersed in a research environment for years, such as students on a taught masters program. A lecturer telling us to read the papers and that they will answer any questions is not how content should be delivered. We have other responsibilities, almost no-one I knew bothered with this.
+
+There are some lecturers who do provide some form of lecture notes, and while this is a step in the right direction there are ways to improve this\footnote{These comments do not apply to William Suen has full lecture notes for this part of the module, and he deserves a special commendation for this.}. The main problem is that the lecture slides still appear to be the authority on what is examined, and I cannot trust the lecture notes to be up to date. I am unsure that content is in the lecture notes if and only if it is in the slides, and this means I would need to revise from the notes anyway. This can be fixed by having the lecture notes as the main document associated with the module, and the lecture slides only acting as a supporting visual aid for the lecturers.
+
+\subsection{Typesetting and Figure Quality}
+
+The quality of some of the lecture slides is inexcusable, and some of the PowerPoint practices of the lecturers is frankly shocking. The main issues are in the writing of equations and the resolution of the figures. I refuse to believe that the lecturers submit papers in this manner, if I ran the journal they used then I would be blacklisting them. In this subsection I present examples of the poor typesetting and figures, and also give comparisons of how it should be done. All figures from the slides presented here have been extracted with a pdf editor to extract their original quality as found in the slides. 
+
+When I am doing technical writing and need a figure from a paper or book, I will try and track down the source of that figure until I can find a pdf version, or at least a high quality bitmap version. I do not think the UCL engineering professors even know what vector or bitmap image formats are. I have given some examples of psychotic figure use in appendix~\ref{sec:UnhingedFigures}. Figure~\ref{fig:TerribleFigures} in particular shows some of the most egregious examples I have come across of pictures that UCL engineering professors thought was acceptable enough to put in the lecture slides. The resolution is often shocking and it seems very little care is put into obtaining high quality figures.
+
+To produce nice plots I use python, although MATLAB and \textsf{R} are also standard for making publication quality plots. UCL engineering professors are willing to whip something together in Microsoft Excel and snip it, and in my opinion this is far below the acceptable standard. If they are going to do this, the least they could do would be to zoom in before snipping to get a higher quality figure. Some of the figures leave me confused as to how the professor even managed to achieve such a figure, a prime example being figure~\ref{fig:HalfBitmapHalfPDF}. This figure actually appears to be a vector, apart from the lower portion of the sine curve. I have no idea how you would even achieve this accidentally, and in general I am unsure if these bad figures are a result of technophobia or laziness.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/HalfVectorHalfBitmap.pdf}
+    \caption{A picture that somehow ended up being half vector and half bitmap}
+    \label{fig:HalfBitmapHalfPDF}
+\end{figure}
+
+When the lecturers are not playing a game of not-enough-JPEG, they are often found committing crimes against typesetting. One of my lecturers was clearly struggling to place a comma after a subscript, and instead used an apostrophe inside the subscript - this is chaos. Something that I have found in several lecturers slides is the use of a period in a separate text box when they need to denote a time derivative, and in figure~\ref{fig:ShiftedTimeDerivative} you can tell that they added the word ``the" but forgot to move the time derivative. It is almost as if this isn't the proper way of typesetting a time derivative. Lecturers also need to understand that a period, ``x", or $x$, are not proper ways to denote multiplication, they should use $\cdot$ instead.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/ShiftedTimeDerivative.pdf}
+    \caption{A lecturer who used a period as a time derivative forgot to move it when they added a word.}
+    \label{fig:ShiftedTimeDerivative}
+\end{figure}
+\vspace{-2mm}
+
+Microsoft PowerPoint has an equation writer so there really is no excuse for these wild tactics. Consider figure~\ref{fig:BracketPicture} where we can see what happens when equations are not input properly. First notice that the 6 has been cut off, and also a mysterious line sticking out to the right of the closing bracket is present. This is because the fraction line is a line from the shapes menu, and the bracket is an image placed in the front. The alignment is poor because every number is in its own text box. The whole equation itself is also an image for some reason as well. Other examples of poor typesetting include using a period for multiplication instead of $\cdot$. The lecturers also seem averse to using superscripts and prefer to concatenate subscripts instead. This is messy, and at the very least they could use a comma\footnote{Unless they are working with tensors or matrices where it is convention not to do this and it is clear.}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/BracketPicture.pdf}
+    \caption{An equation constructed without the equation writer. The blue background has been added to demonstrate the fact that the brackets are actually images that have been placed on top of the equation.}
+    \label{fig:BracketPicture}
+\end{figure}
+
+Technical writing should be done in {\LaTeX} as a bare minimum standard. In my undergraduate studies, {\LaTeX} was used for everything, and even as students we were expected to learn it for our dissertations. The ability to use {\LaTeX} should be completely standard for academics, it is disgraceful that the lecturers don't even know how to use the PowerPoint equation writer. I would be complaining about poor typesetting if I saw practices such as writing degree symbols like $90^\circ$ instead of $90\degree$, or not vertically aligning their under braces and over braces - details such as this are just basics, and UCL is significantly below this level. The typesetting in the slides falls significantly short of the standard expected for an A-level student, let alone for a high-ranking university.
+
+As an example from which the lecturers should learn from, I point them towards my undergraduate lecture notes on classical mechanics~\cite{OxfordNotes}. Figure~\ref{fig:NiceFigureExample} shows the standard of figures at a university that cares about quality of its resources. This figure was custom made by the author of the lecture notes and is in a vector file format so the quality remains when zooming in. While this seems like a significant time investment, it only needs to be once. Many of my undergraduate lecture notes had several previous owners, and only small modifications were made between lecturers. I would recommend all lecturers to look at those lecture notes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{Figures/NiceFigureExample.pdf}
+    \caption{An example a figure\protect\footnotemark{ }from my undergraduate~\cite{OxfordNotes}. This quality was the standard, not the exception.}
+    \label{fig:NiceFigureExample}
+\end{figure}
+
+\footnotetext{For those interested, this was showing four qualitatively different behaviours for a Lagrangian top. The curves show the path taken by the axis of symmetry.}
+
+\subsection{Lecturer Practices and Behaviour}
+% Units and Significant Figures
+% Lecturers should not discuss their research in the opening lecture
+% Lecturer attitude
+% Ambiguity in questions and instructions
+% Contacting lecturers and lecturer responses
+
+One of the biggest issues I have personally found with UCL are the lectures, in particular their sloppiness and lack of attention to detail. The notation, use of units, and understanding of significant figures would be poor for an A-level student, and is shameful for a supposedly high-calibre university. I often found areas of ambiguity, and getting answers from many of the lectures was an area of regular frustration. I also want to give examples of behaviours and practices of lecturers that needs to stop.
+
+Lecturers often use $m$ to denote the mass flow rate, although this is non-standard. $m$ usually denotes mass, and $\dot{m}$ is used for the time derivative of mass, i.e. the mass flow rate. A similar issue is often present for volume flow rate and $V$, and I am starting to believe this is because the lecturers are just lazy. Equation~\eqref{eqn:SpecificEnergyNotation} is a particularly confused example where the meaning of variables changes between lines. In the first line $Q$ and $W$ have units of energy, but in the second line they have units of energy per kilomole. I would also like to note the non-standard use of $m$ instead of $n$ for number of moles.
+
+\vspace{-4mm}
+\begin{align}
+    \begin{split}
+        \dot{Q} - \dot{W} &= \dot{m} \left( h_{P_0} - h_{R_0} \right)  \\
+        Q - W &= \Delta h_0 \quad (\text{per kmol})
+    \end{split}\label{eqn:SpecificEnergyNotation}
+\end{align}
+
+There are countless examples where the notation used by the lecturers is unclear or non-standard without explanation. I can understand where there are historical reasons behind conventions, for example the use of $m$ as an eigenvalue in the study of spherical harmonics of the Schr\"{o}dinger equation, but this should be mentioned explicitly. In my undergraduate they explained at the start of the course that both~$\times$~and~$\wedge$ were conventions used to denote the cross-product, and throughout the department they use $\wedge$. It was never an issue, and UCL engineering should be able to handle something so simple.
+
+The lecturers are often confusing with their units as well. Equation~\eqref{eqn:FatigueBadUnitsWrong} gives the number of cycles an object can sustain under a given stress. What units should $\sigma$ be given in? It doesn't even make sense to take the logarithm of a number with units, the argument has to be non-dimensional. It was intended for students to give the number of megapascals as the value for sigma, although of course this was never stated. I would also like to point out that sigma is wrong, $\sigma$ is not the number of some unit, $\sigma$ is a pressure and has units to match. We do not write $\sigma$ MPa, the units are part of the quantity. The correct way to do this is shown in equation~\eqref{eqn:FatigueBadUnitsCorrect}.
+
+\vspace{-4mm}
+\begin{subequations}
+    \begin{align}
+        \begin{split}
+        \log_{10} N &= 12.182 - 3\log_{10} \sigma
+        \end{split}\label{eqn:FatigueBadUnitsWrong}  \\
+        \begin{split}
+        \log_{10} N &= 12.182 - 3\log_{10}\left( \frac{\sigma}{1 \ \text{MPa}} \right)
+        \end{split}\label{eqn:FatigueBadUnitsCorrect}
+    \end{align}
+\end{subequations}
+
+The previous paragraph is not just me getting irrationally angry at a single error, the poor practices with units are evident throughout the course. The lecturers seem to have the same understanding of units as a schoolchild, and treat them as a symbol put on the end of quantities at the end of a computation. Another annoyance is using revolutions per minute in equations. It is far cleaner to use revolutions per second or radians per second as these are natural quantities to work with. Lecturers should be far more explicit in the units they are using, and the practice shown in equation~\eqref{eqn:FatigueBadUnitsCorrect} should be standard.
+
+Getting significant figures correct is another extremely basic area that the lecturers struggle with. Quantities are given to wildly different levels of precision with no regard to the context from where they came from. If an equation includes a number precise to only two significant figures then you cannot give an answer to three significant figures as it is not this precise. In general there seems to be a poor understanding of the precision of numbers and what is suitable. For example if we are doing a computation involving a safety factor like in a stress analysis, we should not give the answer to 4 significant figures - such methods are crude approximations and are not that precise. I never expected that I would need to explain this to people with advanced postgraduate degrees in engineering, this is honestly embarrassing.
+
+Ambiguity and precision has been one of my biggest pet peeves throughout the year, and I have regularly had long conversations with coursemates and ongoing uncertainties about what a lecturer meant by what they wrote. The easy solution to this might be to email the lecturers. Firstly, this should not even be necessary, the phrasing should be unambiguous and clear as standard. Secondly, for one of my coursework exercises I needed to send so many emails for clarification that they refused to answer any more\footnote{I will talk in greater detail about issues pertaining to lecturer feedback in section~\ref{sec:AdministrationAndFeedback}.}, and I have included a picture of this in figure~\ref{fig:MehranStoppedAnsweringMe}. Ultimately I think the problem is that the lectures do not care about precise phrasing.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Figures/MehranStoppedAnsweringMe.png}
+    \caption{A lecturer who refused to answer my questions after my ninth email}
+    \label{fig:MehranStoppedAnsweringMe}
+\end{figure}
+
+\newpage
+There are not the hours in the day for me to go through every example of unclear instructions, although I want to highlight one particular example where the lecturers intent is unclear. In question 1aii of the 2019 MECH0032 paper they asked ``Calculate the maximum incident solar radiation that will be available when optimal
+conditions exist" for a fixed solar panel. The intended meaning of optimal here was for the solar panel to be normal to the direction of the Sun's rays, although that is not clear to me. I interpreted ``optimal conditions" to mean the conditions that generated the most power, and this gives a different result. The power depends on the length of the path from the top to the bottom of the atmosphere, and understanding this is examinable and part of the question.
+
+Taking this into account requires solving a transcendental equation which could not be done in the exam\footnote{If the numbers were changed slightly so that the optimal angle of declination of the Sun was greater than 23.5$\degree$ then the question could be answered through analytical means.}. Given that the arguably correct answer was not possible, the meaning is the question is more of a mystery. A possible but incorrect interpretation is to find the power when the Sun was at the highest point in the sky to minimise the path through the atmosphere\footnote{This is wrong because it ignores the angle of the solar panel, although interestingly this gives a higher power than the actual answer.}. I put a question on the Moodle detailing my findings and was told that I was overcomplicating it, and I only needed to consider the value of the three angles. This question is ambiguous to the point where it is wrong, and it worries me that the lecturer seemingly did not understand this in their reply.
+
+While not a very common issue, I have had a few experiences where we were not treated in an age-appropriate manner. After a break in a lecture, a lecturer expected us to realise that the break was over because he was standing there, but people continued to talk. When everyone quietened down, he gave a talk that one might expect in a year 9 class about how we were wasting our own time. No other lecturers has had a problem with letting students know that it was time to continue, and everyone I spoke to about this did not appreciate being treated like a child in this way. Similar incidents of not being treated like adults have occurred and we do not appreciate being infantilised.
+
+A significant portion of the first lecture of each course was very often used by the lectures to discuss their research. In my undergraduate studies the lecturers would extremely rarely even mention their research, and frankly it is not relevant to us. We know that their research is in a similar area to the content of the lecture series and that is all we need to know. The opening lecture should start with five to ten minutes about the structure of the course, how it is examined, important times and dates, etc. In the opening lecture of control and robotics for example we only spent around 40 minutes of the two hour slot going through the slides, the rest of the time was an introduction to the work of the lecturer. Lecturers should not discuss their research beyond a short sentence.
+
+General lecturing practices can also be improved, but the issues I discuss here are minor and only done by a handful of lecturers. Some lecturers would need reminders almost every lecture to use the microphones as we could not hear them. Writing large enough on the board with a clear pen was also a surprisingly common problem. Lecturers not turning the lights in front of the whiteboard off was also common for some lecturers.
+
+\subsection{Specification Uncertainty and Issues}
+
+I have found it unclear what material is part of the specification and what is not. There does not appear to be a document laying out the specification apart from a very brief overview on Moodle in the module description. One might assume that the lecture slides are the authoritative source on what is examinable or not, but I am convinced that this is not the case. UCL does appear to consistently include all examinable content in the lecture slides, however the issue lies in the inclusion of material that is not clearly marked as non-examinable.
+
+The main issue comes from technical diagrams and schematics. I understand why lecturers would want to include such diagrams to give some background understanding, and I am not opposed to them being in the slides. Remembering these diagrams can be hard however, and if it is not required to commit them to memory then it would be nice if this was communicated in some way. Some lecturers show drawings of equipment, for example a labelled cross section of a wind turbine, and I don't believe that we are supposed to remember these. Examples of where line of what is examinable is a lot fuzzier are schematic drawings and charts such as in figure~\ref{fig:DiagramsWithLotsToRemember}, where there can potentially be a lot to remember.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.68\textwidth}
+        \includegraphics[width=\textwidth]{Figures/SpecificEnergyStorage.pdf}
+    \end{subfigure}  \\
+    \begin{subfigure}{0.68\textwidth}
+        \includegraphics[width=\textwidth]{Figures/SpecificPowerStorage.pdf}
+    \end{subfigure}  \\
+    \vspace{5mm}
+    \begin{subfigure}{0.68\textwidth}
+        \includegraphics[width=\textwidth]{Figures/GeothermalPlantSchematics.pdf}
+    \end{subfigure}
+    \caption{These diagrams show a lot of information and it is unclear how much we need to commit to memory.}
+    \label{fig:DiagramsWithLotsToRemember}
+\end{figure}
+
+Figure~\ref{fig:SteamReformationConcentrations} is a good example of where it is unclear of how much we are supposed to remember. I would assume that we would need to know that the concentration depends on temperature, the temperature can be controlled to give desirable concentrations, the concentration of methane drops to 0 at 725$\degree$C, and perhaps the optimal temperature. In one of the tutorial questions however it asks us to draw this graph, and the tutorials are supposed to be representative of the exams. Does this mean we are meant to remember the shapes of those lines in much more detail to be able to recreate the graph accurately?
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/SteamReformationConcentrations.pdf}
+    \caption{A plot that a tutorial suggested we needed to remember in full detail}
+    \label{fig:SteamReformationConcentrations}
+\end{figure}
+
+This is not a request to remove such slides, we are still interested in engineering and developing this background knowledge. Ultimately however the final grade is what matters most, and as such it is important for students to know exactly what they need to and do not need to remember. Some lecturers include a non-examinable label on some of their slides already, and I think this should be implemented into the department policy for making course resources. If there are some key elements of a figure that are examinable then these should be stated, and everything else could be assumed to be non-examinable, similarly to the example I used in the previous paragraph. In my undergraduate lecture notes, the non-examinable content would be indicated with labels denoting the start and end points, and would be contained to their own subsections or subsubsections.
+
+There are also a handful of areas where I think the specification should be changed, although I will not give an exhaustive list here. While I personally believe the specification should be less broad and more detailed, they are generally quite good, and I just have two recommendations. Lecturers should not include topics if they are not going to cover them in a depth that does the topic justice. An example from MECH0032 is the slide shown in figure~\ref{fig:Supercapacitors} on ultracapacitors which was ignored by all those I asked. If a subtopic such as this is to be included then it should be given a proper treatment. Lectures should also look for areas where they can expand on topics more. For example I thought it was strange to omit any discussion about solar panels that change angle in the azimuthal direction, especially given that the analysis changes very little in this case.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/SuperCapacitors.pdf}
+    \caption{A slide that is not worth reading}
+    \label{fig:Supercapacitors}
+\end{figure}
